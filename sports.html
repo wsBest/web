@@ -1,0 +1,489 @@
+<!doctype html>
+<html lang="en">
+	<head>
+
+		<title>运动分类</title>
+		<link href="https://fonts.useso.com/css?family=Oswald" rel="stylesheet">
+		<meta charset="UTF-8">
+		<style>
+			body {
+				margin: 0;
+				padding: 0;
+
+				color: #FFFFFF;
+				width: 100%;
+				min-height: 100%;
+				overflow-x: hidden;
+				-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+
+			}
+
+
+			body header {
+				background-color: transparent;
+				font-family: 'Oswald', sans-serif;
+				position: fixed;
+				display: block;
+				width: 100%;
+				height: 48px;
+				top: 0;
+				right: 0;
+				left: 0;
+				z-index: 90;
+			}
+
+			body header .header-inner {
+				padding: 12px 1.5%;
+			}
+
+			body header .header-inner .logo {
+				position: relative;
+				display: inline;
+				width: auto;
+				height: auto;
+				float: left;
+			}
+
+			body header .header-inner .logo a {
+				position: relative;
+				display: inline;
+				width: auto;
+				height: auto;
+				color: #FFFFFF;
+				outline: 0px none;
+				outline: 0px;
+				text-decoration: none;
+				transition: all 0.35s ease-in-out;
+				text-transform: uppercase;
+			}
+
+			body header .header-inner .logo a:hover {
+				color: rgba(255, 255, 255, 0.45);
+			}
+
+			body header .header-inner .logo a span {
+				font-weight: 700;
+			}
+
+			body header .header-inner nav {
+				position: relative;
+				display: inline;
+				margin: 0;
+				padding: 0;
+				list-type-style: none;
+				float: right;
+			}
+
+			body header .header-inner nav li {
+				position: relative;
+				display: inline;
+				margin-left: 16px;
+			}
+
+			body header .header-inner nav li a {
+				font-family: 'Oswald', sans-serif;
+				position: relative;
+				font-size: 13px;
+				color: #FFFFFF;
+				text-decoration: none;
+				line-height: 24px;
+				transition: all 0.35s ease-in-out;
+			}
+
+			body header .header-inner nav li a span {
+				position: relative;
+				z-index: 2;
+			}
+
+			body header .header-inner nav li a:hover {
+				color: rgba(255, 255, 255, 0.45);
+			}
+
+			body section.slideshow {
+				position: relative;
+				display: block;
+				width: 100%;
+				height: 100%;
+				height: 100vh;
+				margin: 0 auto;
+				visibility: hidden;
+				overflow: hidden;
+			}
+
+			body section.slideshow ul.navigation {
+				position: absolute;
+				display: block;
+				width: 640px;
+				height: 640px;
+				padding: 0;
+				margin: 0;
+				left: -230px;
+				top: 50%;
+				margin-top: -320px;
+				z-index: 10;
+			}
+
+			body section.slideshow ul.navigation li.navigation-item {
+				position: absolute;
+				display: inline-block;
+				overflow: hidden;
+				width: 120px;
+				height: 120px;
+				padding: 10px;
+				text-align: center;
+				cursor: pointer;
+				border-radius: 50%;
+				transition: border 0.6s ease-in-out;
+			}
+
+			body section.slideshow ul.navigation li.navigation-item .rotate-holder {
+				position: fixed;
+				display: block;
+				width: 0;
+				height: 0;
+				left: -9999px;
+				top: -9999px;
+			}
+
+			body section.slideshow ul.navigation li.navigation-item .background-holder {
+				position: absolute;
+				display: block;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				border-radius: 50%;
+				background-repeat: no-repeat;
+				background-position: center center;
+				background-size: cover;
+				opacity: 1;
+				visibility: visible;
+				transition: opacity 0.6s ease-in-out, visibility 0.6s ease-in-out;
+			}
+
+			body section.slideshow ul.navigation li.navigation-item:hover .background-holder {
+				opacity: 0.75;
+			}
+
+			body section.slideshow ul.navigation li.navigation-item.active .background-holder {
+				opacity: 0;
+				visibility: hidden;
+			}
+
+			body section.slideshow .detail {
+				position: absolute;
+				display: block;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				z-index: 8;
+			}
+
+			body section.slideshow .detail .detail-item {
+				position: absolute;
+				display: block;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				opacity: 0;
+				visibility: hidden;
+				transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+			}
+
+			body section.slideshow .detail .detail-item .headline {
+				position: absolute;
+				display: inline-block;
+				width: 90%;
+				max-width: calc(90% - 480px);
+				height: 126px;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				overflow: visible;
+				white-space: nowrap;
+				box-sizing: border-box;
+				z-index: 2;
+			}
+
+			body section.slideshow .detail .detail-item .headline .letter {
+				font-family: 'Oswald', sans-serif;
+				position: relative;
+				display: inline-block;
+				opacity: 0;
+				visibility: hidden;
+				color: #FFFFFF;
+				font-size: 132px;
+				line-height: 110px;
+				font-weight: 900;
+				font-kerning: none;
+				white-space: nowrap;
+				box-sizing: border-box;
+				text-transform: uppercase;
+			}
+
+			body section.slideshow .detail .detail-item .background {
+				position: absolute;
+				display: block;
+				width: 100%;
+				width: calc(100% + 100px);
+				height: 100%;
+				height: calc(100% + 100px);
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				overflow: visible;
+				background-repeat: no-repeat;
+				background-position: center center;
+				background-size: cover;
+				z-index: 1;
+			}
+
+			body section.slideshow .detail .detail-item .background::before {
+				content: "";
+				background: linear-gradient(to right, black 0%, rgba(0, 0, 0, 0) 90%);
+				position: absolute;
+				display: block;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				z-index: 2;
+
+			}
+
+			body section.slideshow .detail .detail-item.active {
+				opacity: 1;
+				visibility: visible;
+			}
+			.content{
+				position: absolute;
+				display: inline-block;
+				width: 100%;
+				max-width: calc(100% - 480px);
+				height: 126px;
+				top: 30%;
+				left: 85%;
+				transform: translate(-50%, -50%);
+				overflow: visible;
+				white-space: nowrap;
+				box-sizing: border-box;
+				z-index: 2;
+			}
+		</style>
+
+
+	</head>
+	<body>
+		<section class="slideshow">
+
+			<ul class="navigation">
+
+				<li class="navigation-item active">
+					<span class="rotate-holder"></span>
+					<span class="background-holder" style="background-image: url(assets2/img/ppq.jpeg);"></span>
+				</li>
+				<!-- slideshow:navigation:item END -->
+
+				<!-- slideshow:navigation:item START -->
+				<li class="navigation-item">
+					<span class="rotate-holder"></span>
+					<span class="background-holder" style="background-image: url(assets2/img/ymq.jpg);"></span>
+				</li>
+
+				<li class="navigation-item">
+					<span class="rotate-holder"></span>
+					<span class="background-holder" style="background-image: url(assets2/img/basketball.jpg);"></span>
+				</li>
+
+				<li class="navigation-item">
+					<span class="rotate-holder"></span>
+					<span class="background-holder" style="background-image: url(assets2/img/football.jpg);"></span>
+				</li>
+
+				<li class="navigation-item">
+					<span class="rotate-holder"></span>
+					<span class="background-holder" style="background-image: url(assets2/img/pq.jpg);"></span>
+				</li>
+
+				<li class="navigation-item">
+					<span class="rotate-holder"></span>
+					<span class="background-holder" style="background-image: url(assets2/img/swim.jpg);"></span>
+				</li>
+
+				<li class="navigation-item">
+					<span class="rotate-holder"></span>
+					<span class="background-holder" style="background-image: url(assets2/img/run.jpg);"></span>
+				</li>
+
+				<li class="navigation-item">
+					<span class="rotate-holder"></span>
+					<span class="background-holder" style="background-image: url(assets2/img/ts.jpg);"></span>
+				</li>
+
+
+
+			</ul>
+
+			<div class="detail">
+
+				<div class="detail-item active">
+					<div class="headline">乒乓球</div>
+					<div align="justify" class="content">
+						<div style="font-style: italic; font-size: 20px;" align="left">简要介绍：</div>
+						<br />
+						<p align="justify" style="font-size: 22px; margin-right: 100px;">
+							&emsp;&emsp;<strong>乒乓球</strong>由其中两个或四个球员使用小球拍在桌子上来回轻击球。 <br/>
+							游戏发生在由网络划分的硬桌上。 除了初始发球之外，规则通常如下：<br/>
+							球员必须允许向他们发挥的球在他们的桌子一侧反弹一次，并且必须<br/>将其返回以使其在对侧反弹至少一次。 当球员未能在规则内返回球<br/>时得分。游戏很快，需要快速反应。 
+							旋转球改变了它的轨迹并限制了<br/>对手的选择，给击球手带来了很大的优势。<br />
+							&emsp;&emsp;乒乓球由全球组织国际乒乓球联合会 （ITTF）管理，成立于1926<br/>年.ITTF目前包括226个成员协会。乒乓球官方规则在国际乒联手册中 <br/>有详细说明。 自1988年以来，乒乓球一直是一项奥林匹克运动 ， <br/>有几个赛事类别。 从1988年到2004年，这些是男子单打，女子单打，<br/>男子双打和女子双打。 自2008年以来，已经参加了一场团体赛，<br/>而不是双打比赛。
+						</p>
+					</div>
+					<div class="background" style="background-image: url(assets2/img/ppq.jpeg); height: 100vh;"></div>
+					<div class="background"
+						style="background-image: url(assets2/img/ppq.jpeg); height: 100vh; background-size: cover; background-position: center;">
+					</div>
+				</div>
+				<!-- slideshow:details END -->
+
+				<!-- slideshow:details START -->
+				<div class="detail-item">
+					<div class="headline">羽毛球</div>
+					<div align="justify" class="content">
+						<div style="font-style: italic; font-size: 20px;" align="left">简要介绍：</div>
+						<br />
+						<p align="justify" style="font-size: 22px; margin-right: 100px;">
+							&emsp;&emsp;<strong>羽毛球</strong>是一项室内、室外都可以进行的体育运动。依据参与的<br/>人数，可以分为单打与双打，及新兴的3打3。羽毛球拍由拍面、拍杆、<br/>拍柄及拍框与拍杆的接头构成。
+							一支球拍的长度不超过680毫米，其中<br/>球拍柄与球拍杆长度不超过41厘米，拍框长度为28厘米，宽为23厘米，<br/>随着科学技术的发展，球拍的发展向着重量更轻、拍框更硬、拍杆<br/>弹性更好的方向发展。
+						</p>
+					</div>
+					<div class="background" style="background-image: url(assets2/img/ymq.jpg);"></div>
+				</div>
+				<!-- slideshow:details END -->
+
+				<!-- slideshow:details START -->
+				<div class="detail-item">
+					<div class="headline">篮球</div>
+					<div align="justify" class="content">
+						<div style="font-style: italic; font-size: 20px;" align="left">简要介绍：</div>
+						<br />
+						<p align="justify" style="font-size: 22px; margin-right: 100px;">
+							&emsp;&emsp;<strong>篮球</strong>起源于1891年，美国人詹姆斯-奈史密斯在马萨诸塞州的基<br/>督教青年会国际训练学校任教时，受到当地儿童将桃子投入桃子筐内<br/>受到启发，他结合其他球类运动思想，将这种游戏形式加以利用，<br/>便发明了最初的篮球及篮球运动。<br/>
+							&emsp;&emsp;篮球运动是一项极具 观赏性的球类运动，它是由球员用传球、<br/>运球、投篮及战术配合来完成组织进攻和防守的一项球 类运动。激烈<br/>的身体对抗和防守、巧妙的传切配合、精准的投篮得分都会给观众<br/>留下深刻的印象。<br/>
+						</p>
+					</div>
+					<div class="background" style="background-image: url(assets2/img/basketball.jpg);"></div>
+				</div>
+				<!-- slideshow:details END -->
+
+				<!-- slideshow:details START -->
+				<div class="detail-item">
+					<div class="headline">足球</div>
+					<div align="justify" class="content">
+						<div style="font-style: italic; font-size: 20px;" align="left">简要介绍：</div>
+						<br />
+						<p align="justify" style="font-size: 22px; margin-right: 100px;">
+							&emsp;&emsp;<strong>足球</strong>，有"世界第一运动"的美誉，是全球体育界最具影响力的<br/>单项体育运动。
+							标准的足球比赛由两队各派10名球员与1名守门员，<br/>共11人，在长方形的草地球场上对抗、进攻、防守。
+							比赛目的是<br/>尽量将足球射入对方的球门内，每射入一球就可以得到一分，当<br/>比赛完毕后，得分多的一队则胜出。
+							如果在比赛规定时间内<br/>得分相同，则须看比赛章则而定，可以抽签、加时再赛或互射点球<br/>(十二码) 等形式比赛分高下。
+							足球比赛中除了守门员可以在己方<br/>禁区内利用手部接触足球外，球场上每名球员只可以利用手以外<br/>的身体其他部分控制足球(开界外球例外)。
+						</p>
+					</div>
+					<div class="background" style="background-image: url(assets2/img/football.jpg);"></div>
+				</div>
+				<!-- slideshow:details END -->
+
+				<!-- slideshow:details START -->
+				<div class="detail-item">
+					<div class="headline">排球</div>
+					<div align="justify" class="content">
+						<div style="font-style: italic; font-size: 20px;" align="left">简要介绍：</div>
+						<br />
+						<p align="justify" style="font-size: 22px; margin-right: 100px;">
+							&emsp;&emsp;<strong>排球</strong>，排球(volleyball)球类运动项目之一，球场长方形，<br/>中间隔有高网，比赛
+							双方（每方六人）各占球场的一方，球员用手<br/>把球从网上空打来打去。排球运动使用的球，用羊皮或人造革做壳，<br/>橡胶做胆，大小和足球相似。
+							这项运动源于美国。1895年，美国<br/>马萨诸塞州（旧称麻省）霍利约克市，一位叫威廉·摩根的体育工作<br/>人员发明的。
+						</p>
+					</div>
+					<div class="background" style="background-image: url(assets2/img/pq.jpg);"></div>
+				</div>
+				<!-- slideshow:details END -->
+
+				<!-- slideshow:details START -->
+				<div class="detail-item">
+					<div class="headline">游泳</div>
+					<div align="justify" class="content">
+						<div style="font-style: italic; font-size: 20px;" align="left">简要介绍：</div>
+						<br />
+						<p align="justify" style="font-size: 22px; margin-right: 100px;">
+							&emsp;&emsp;<strong>游泳</strong>，是人在水的浮力作用下产生向上漂浮，凭借浮力通过肢体<br/>有规律的运动，使身体在水中有规律运动的技能。
+							17世纪60年代，<br/>英国不少地区的游泳活动就开展得相当活跃。1828年，英国在利物浦<br/>乔治码头修造了第一个室内游泳池，这种泳池到19世纪30年代，在英<br/>国各大市城相继出现。1837年，
+							在英国伦敦成立了第一个游泳组织，<br/>同时举办了英国最早的游泳比赛。1896年，游泳被列为奥运会竞赛<br/>项目。
+							游泳的最高组织机构是国际游泳联合会，总部设在瑞士洛桑。<br/>1908年由比利时、丹麦、芬兰、法国、德国、英国、匈牙利和瑞典<br/>游泳协会倡议成立。
+						</p>
+					</div>
+					<div class="background" style="background-image: url(assets2/img/swim.jpg);"></div>
+				</div>
+				<!-- slideshow:details END -->
+
+				<!-- slideshow:details START -->
+				<div class="detail-item">
+					<div class="headline">跑步</div>
+					<div align="justify" class="content">
+						<div style="font-style: italic; font-size: 20px;" align="left">简要介绍：</div>
+						<br />
+						<p align="justify" style="font-size: 22px; margin-right: 100px;">
+							&emsp;&emsp;<strong>跑步</strong>是一种很好的有氧运动，它将改善你的身体燃烧卡路里<br/>和使用氧气的方式，挑战你的心脏和肺，提高你的心血管耐力，<br/>减掉多余的体重，提高你的整体健康。
+							虽然身体的很多位置的肌肉<br/>会从慢跑中受益，但接受最大锻炼的肌肉是心脏。
+							跑步挑战心脏<br/>和整个心血管系统。可以将心率提高到你的目标心率，保持这个水平，<br/>并迫使肺部努力工作，为身体提供氧气，因此慢跑是一种很好的心血<br/>管锻炼方式。
+						</p>
+					</div>
+					<div class="background" style="background-image: url(assets2/img/run.jpg);"></div>
+				</div>
+				<!-- slideshow:details END -->
+
+				<!-- slideshow:details START -->
+				<div class="detail-item">
+					<div class="headline">跳绳</div>
+					<div align="justify" class="content">
+						<div style="font-style: italic; font-size: 20px;" align="left">简要介绍：</div>
+						<br />
+						<p align="justify" style="font-size: 22px; margin-right: 100px;">
+							&emsp;&emsp;<strong>跳绳</strong>是一项在环摆的绳索中做各种跳跃动作的体育运动，<br/>
+							同时也是一项老少皆宜的全身性有氧健身运动、极佳的健体<br/>运动。
+							它除了拥有运动的一般益处外，更有很多独特的优点。<br/>跳绳每半小时消耗热量约四百卡，能有效训练个人的反应和<br/>耐力，
+							有助保持个人体态健美和协调性，对心肺系统等各种<br/>脏器、协调性、姿态、减肥等都有相当大的帮助。
+						</p>
+					</div>
+					<div class="background" style="background-image: url(assets2/img/ts.jpg);"></div>
+				</div>
+				<!-- slideshow:details END -->
+
+
+			</div>
+			<!-- slideshow:details END -->
+
+		</section>
+		<!-- slideshow END -->
+
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+		<script src="https://unpkg.com/imagesloaded@4.1.4/imagesloaded.pkgd.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/plugins/CSSPlugin.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/plugins/TextPlugin.min.js"></script>
+		<script src="assets2/js/demo.js"></script>
+
+	</body>
+</html>

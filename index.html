@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>self</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!-- Material Design Bootstrap -->
+  <link rel="stylesheet" href="css/mdb.min.css">
+  <!-- Your custom styles (optional) -->
+  <link rel="stylesheet" href="css/styleForIndex.css">
+</head>
+
+<body onload="javascript:window.alert('温馨提示: 为了达到网页浏览的最佳效果,建议您让浏览器达到100%的缩放程度!')">
+  <!-- Main navigation -->
+  <header>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar" >
+      <div class="container" >
+        <a class="navbar-brand" href="#">self</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+          aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <ul class="navbar-nav mr-auto smooth-scroll">
+            <li class="nav-item">
+              <a class="nav-link" href="#Introduction">Introduction</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#Favorite" data-offset="90">Favorite</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#Notice" data-offset="90">Notice</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" data-offset="30" id="myPets">Pets</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" data-offset="90" id="mySports" onclick="function(){conlose.log('vsd')}">Sports</a>
+            </li>
+            <!-- Dropdown -->
+            <li class="nav-item dropdown mr-4">
+            	<a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+            	 aria-expanded="false" data-offset="90">Music</a>
+            	<div class="dropdown-menu  dropdown-secondary" aria-labelledby="navbarDropdownMenuLink">
+            		<a class="dropdown-item" id="MyItem1" href="#" >music Introduction</a>
+            		<a class="dropdown-item" id="MyItem2" href="#" >music Listening</a>
+            	</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar -->
+    <!-- Full Page Intro -->
+    <div class="view">
+      <!-- Mask & flexbox options-->
+      <div class="mask rgba-gradient d-flex justify-content-center align-items-center">
+        <!-- Content -->
+        <div class="container px-md-3 px-sm-0">
+          <!--Grid row-->
+          <div class="row wow fadeIn">
+            <!--Grid column-->
+            <div class="col-md-12 mb-4 white-text text-center wow fadeIn">
+              <h3 class="display-3 font-weight-bold white-text mb-0 pt-md-5 pt-5">Welcome</h3>
+              <hr class="hr-light my-4 w-75">
+              <h4 class="subtext-header mt-2 mb-4">Welcome to WS's personal website, where I will introduce you to some interesting things.</h4>
+              <!--Review-->
+              <div class="yellow-text">
+                <i class="fas fa-star"> </i>
+                <i class="fas fa-star"> </i>
+                <i class="fas fa-star"> </i>
+                <i class="fas fa-star"> </i>
+                <i class="fas fa-star"> </i>
+              </div>
+            </div>
+            <!--Grid column-->
+          </div>
+          <!--Grid row-->
+        </div>
+        <!-- Content -->
+      </div>
+      <!-- Mask & flexbox options-->
+    </div>
+    <!-- Full Page Intro -->
+  </header>
+  <!--Main layout-->
+  <main>
+
+    <!--Section: about-->
+    <section id="Introduction" class="py-5">
+
+      <!-- Container -->
+      <div class="container">
+        <!-- Section heading -->
+        <h2 class="h1-responsive font-weight-bold text-center mb-5">Who am I</h2>
+        <!-- Section description -->
+        <p class="lead grey-text text-center w-responsive mx-auto mb-5">Who am I? You must be very curious, next, 
+		I will introduce my three identities,  and then you will understand.
+        </p>
+        <!-- Grid row -->
+        <div class="row">
+
+          <!--Grid column-->
+          <div class="col-md-6 mb-4">
+          
+            <!--Carousel Wrapper-->
+            <div id="carousel-example-2" class="carousel slide carousel-fade" data-ride="carousel">
+              <!--Indicators-->
+              <ol class="carousel-indicators">
+                <li data-target="#carousel-example-2" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-example-2" data-slide-to="1"></li>
+                <li data-target="#carousel-example-2" data-slide-to="2"></li>
+              </ol>
+              <!--/.Indicators-->
+              <!--Slides-->
+              <div class="carousel-inner" role="listbox">
+                <div class="carousel-item active">
+                  <div class="view">
+                    <img class="d-block w-100" src="img/student.jpg"
+                      alt="First slide">
+                    <div class="mask rgba-black-light"></div>
+                  </div>
+                  <div class="carousel-caption">
+                    <h3 class="h3-responsive">student</h3>
+                    <p>Reading a book</p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <!--Mask color-->
+                  <div class="view">
+                    <img class="d-block w-100" src="img/code.jpg"
+                      alt="Second slide">
+                    <div class="mask rgba-black-light"></div>
+                  </div>
+                  <div class="carousel-caption">
+                    <h3 class="h3-responsive">Programming enthusiasts</h3>
+                    <p>Write the code</p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <!--Mask color-->
+                  <div class="view">
+                    <img class="d-block w-100" src="img/tourist.jpg"
+                      alt="Third slide">
+                    <div class="mask rgba-black-slight"></div>
+                  </div>
+                  <div class="carousel-caption">
+                    <h3 class="h3-responsive">Travel enthusiast</h3>
+                    <p>Have a trip</p>
+                  </div>
+                </div>
+              </div>
+              <!--/.Slides-->
+              <!--Controls-->
+              <a class="carousel-control-prev" href="#carousel-example-2" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carousel-example-2" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+              <!--/.Controls-->
+            </div>
+            <!--/.Carousel Wrapper-->
+          
+          </div>
+          <!--Grid column-->
+
+          <!-- Grid column -->
+          <div class="col-md-6">
+
+            <!-- Grid row -->
+            <div class="row mb-3">
+
+              <!-- Grid column -->
+              <div class="col-1">
+                <i class="fas fa-crow fa-lg blue-text"></i>
+              </div>
+              <!-- Grid column -->
+
+              <!-- Grid column -->
+              <div class="col-xl-10 col-md-11 col-10">
+                <h5 class="font-weight-bold mb-3">Student</h5>
+                <p class="grey-text">I am from Chongqing, a university student. Although the summer in Chongqing is very hot, it still can't stop people from loving it.</p>
+              </div>
+              <!-- Grid column -->
+
+            </div>
+            <!-- Grid row -->
+
+            <!-- Grid row -->
+            <div class="row mb-3">
+
+              <!-- Grid column -->
+              <div class="col-1">
+                <i class="fas fa-crow fa-lg blue-text"></i>
+              </div>
+              <!-- Grid column -->
+
+              <!-- Grid column -->
+              <div class="col-xl-10 col-md-11 col-10">
+                <h5 class="font-weight-bold mb-3">Programming enthusiasts</h5>
+                <p class="grey-text">As my major is computer science and technology, I am particularly interested in computer programming, and not only that, I am full of curiosity about all the unknown knowledge in the computer world.</p>
+              </div>
+              <!-- Grid column -->
+
+            </div>
+            <!-- Grid row -->
+
+            <!--Grid row-->
+            <div class="row">
+
+              <!-- Grid column -->
+              <div class="col-1">
+                <i class="fas fa-crow fa-lg blue-text"></i>
+              </div>
+              <!-- Grid column -->
+
+              <!-- Grid column -->
+              <div class="col-xl-10 col-md-11 col-10">
+                <h5 class="font-weight-bold mb-3">Travel enthusiast</h5>
+                <p class="grey-text mb-0">Although I am an engineering student, I am also curious about the world. I like to travel around. I think it can broaden my horizons and enrich my knowledge.</p>
+              </div>
+              <!-- Grid column -->
+
+            </div>
+            <!--Grid row-->
+
+          </div>
+          <!--Grid column-->
+
+        </div>
+        <!-- Grid row -->
+
+      </div>
+      <!-- Container -->
+
+    </section>
+    <!--Section: about-->
+
+    <!--Section: projects-->
+    <section id="Favorite" class="text-center py-5" style="background-color: #eee;">
+
+      <!-- Container -->
+      <div class="container">
+
+        <!-- Section heading -->
+        <h2 class="h1-responsive font-weight-bold mb-5">My Favorite</h2>
+        <!-- Section description -->
+        <p class="grey-text w-responsive mx-auto mb-5">Here are three of my main hobbies.</p>
+
+        <!-- Grid row -->
+        <div class="row text-center">
+
+          <!-- Grid column -->
+          <div class="col-lg-4 col-md-12 mb-lg-0 mb-4">
+            <!--Featured image-->
+            <div class="view overlay rounded z-depth-1">
+              <img src="img/pet.jpg" class="img-fluid"
+                alt="Sample project image">
+              <a>
+                <div class="mask rgba-white-slight"></div>
+              </a>
+              <!--Excerpt-->
+              <div class="card-body pb-2">
+                <h4 class="font-weight-bold my-3">Keep pets</h4>
+                <p class="grey-text" >Pets are good friends of human beings. Keeping pets can enhance our relationship with them.
+                </p>
+				<div class="red-text">
+					<i class="fas fa-heart"></i>
+					<i class="fas fa-heart"></i>
+					<i class="fas fa-heart"></i>
+				</div>
+                
+              </div>
+            </div>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-lg-4 col-md-6 mb-md-0 mb-4">
+            <!--Featured image-->
+            <div class="view overlay rounded z-depth-1">
+              <img src="img/sport.jpg" class="img-fluid"
+                alt="Sample project image">
+              <a>
+                <div class="mask rgba-white-slight"></div>
+              </a>
+              <!--Excerpt-->
+              <div class="card-body pb-2">
+                <h4 class="font-weight-bold my-3">Do some sports</h4>
+                <p class="grey-text">More exercise can enhance our own immunity, which is conducive to our physical and mental health.
+                </p>
+                <div class="yellow-text">
+                	<i class="fas fa-heart"></i>
+                	<i class="fas fa-heart"></i>
+                	<i class="fas fa-heart"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-lg-4 col-md-6">
+            <!--Featured image-->
+            <div class="view overlay rounded z-depth-1">
+              <img src="img/music.jpg" class="img-fluid"
+                alt="Sample project image">
+              <a>
+                <div class="mask rgba-white-slight"></div>
+              </a>
+              <!--Excerpt-->
+              <div class="card-body pb-2">
+                <h4 class="font-weight-bold my-3">Listening music</h4>
+                <p class="grey-text">Music, should be most people's favorite entertainment! Listening to music is a good way to relax.
+                </p>
+                <div class="blue-text">
+                	<i class="fas fa-heart"></i>
+                	<i class="fas fa-heart"></i>
+                	<i class="fas fa-heart"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Grid column -->
+
+        </div>
+        <!-- Grid row -->
+
+      </div>
+      <!-- Container -->
+
+    </section>
+    <!--Section: projects-->
+
+    <!--Section: gallery-->
+    <section id="Notice" class="text-center py-5">
+
+      <!-- Container -->
+      <div class="container">
+		
+        <!-- Section heading -->
+        <h2 class="h1-responsive font-weight-bold mb-5">Notice</h2>
+		<!--Grid row-->
+		<div class="row">
+		
+		  <!--Grid column-->
+		  <div class="col-md-4 mb-1">
+		    <i class="fas fa-map-marked-alt fa-4x blue-text"></i>
+		    <h4 class="my-4">Trip</h4>
+			<p class="black-text">The world is a book, don’t get enough from travel, but to our mind to have a rest.</p>
+		  </div>
+		  <!--Grid column-->
+		
+		  <!--Grid column-->
+		  <div class="col-md-4 mb-1">
+		    <i class="fas fa-city fa-4x green-text"></i>
+		    <h4 class="my-4">Life</h4>
+			<p class="black-text">The important thing in life is to have a great aim, and the determination to attain it.</p>
+		  </div>
+		  <!--Grid column-->
+		
+		  <!--Grid column-->
+		  <div class="col-md-4 mb-1">
+		    <i class="fas fa-atlas fa-4x cyan-text"></i>
+		    <h4 class="my-4">Study</h4>
+			<p class="black-text">Learning must be like a bee that has picked many flowers before it can produce honey.</p>
+		  </div>
+		  <!--Grid column-->
+		
+		</div>
+		<!--Grid row-->
+		
+        <!-- Section description -->
+        <p class="black-text w-responsive mx-auto mb-5" style="font-size: large;" align="justify"><strong>&emsp;So far, the basic information of the home page is here. 
+		If you are interested, you can click the purple button at the bottom right to go back to the navigation bar and click the "pets", "Sports" or "Music" option in the navigation bar to browse the details page of each part! 
+		Thank you for watching!</strong></p>
+
+        <a class="btn btn-purple btn-sm" style="float: right;" href="#" ><i class="fa fa-paper-plane"></i> Back to nav-bar</a>
+
+      </div>
+      <!-- Container -->
+
+    </section>
+    <!--Section: gallery-->
+
+    <!--Section: call to action-->
+    <div class="streak streak-md streak-photo"
+      style="background-image:url('./img/final.jpg')">
+      <div class="flex-center white-text rgba-black-light pattern-1">
+        <ul class="mb-0 list-unstyled">
+          <li>
+            <h2 class="h2-responsive"><i class="fas fa-quote-left" aria-hidden="true"></i> 
+			I have only one faith: All the way up the mountain. Because when I was standing on the top of the mountain, 
+			I found the higher mountain there.<i class="fas fa-quote-right"
+                aria-hidden="true"></i></h2>
+          </li>
+          <li class="mb-0">
+            <h5 class="text-right font-italic mb-0">~ My creed in life</h5>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!--Section: call to action-->
+
+  </main>
+  <!--Main layout-->
+
+  <!-- Footer -->
+  <footer class="page-footer font-small pt-4">
+
+    <!-- Footer Elements -->
+    <div class="container">
+
+      <!-- Social buttons -->
+      <ul class="list-unstyled list-inline text-center">
+        <li class="list-inline-item">
+          <a class="btn-floating btn-tw mx-1">
+            <i class="fab fa-weibo"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="btn-floating btn-gplus mx-1">
+            <i class="fab fa-weixin"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="btn-floating btn-li mx-1">
+            <i class="qq fab fa-qq"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="btn-floating btn-dribbble mx-1">
+            <i class="fas fa-comment-dots"> </i>
+          </a>
+        </li>
+      </ul>
+      <!-- Social buttons -->
+
+    </div>
+    <!-- Footer Elements -->
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2021 Copyright:
+      <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
+    </div>
+    <!-- Copyright -->
+
+  </footer>
+  <!-- Footer -->
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <!-- Your custom scripts (optional) -->
+  <script type="text/javascript">
+    // MDB Lightbox Init
+    $(function () {
+      $("#mdb-lightbox-ui").load("mdb-addons/mdb-lightbox-ui.html");
+    });
+    // 以下为动画效果新添加的两条语句
+    // Adding animations to the sections, 使用的是淡入, 你也可以试试zoomIn等动画
+    $("section").addClass("wow fadeIn");
+    // Animations Init, 注意必须放在ready方法中以防WOW对象没能加载成功
+    $(document).ready(function () {
+      new WOW().init();
+    });
+	document.getElementById("MyItem1").onclick = function() {
+		console.log("dian ji le!")
+		var newwin = window.open();
+		newwin.location.assign('songIntroduction.html');
+	}
+	document.getElementById("MyItem2").onclick = function() {
+		var newwin = window.open();
+		newwin.location.assign('listenMusic.html');
+	}
+	document.getElementById("myPets").onclick = function() {
+		var newwin = window.open();
+		newwin.location.assign('pets.html');
+	}
+	document.getElementById("mySports").onclick = function() {
+		var newwin = window.open();
+		newwin.location.assign('sports.html');
+	}
+	  // Carousel options
+	  $('#carousel-example-2').carousel({
+	    interval: 2000, // 间隔时间, 默认5000毫秒, 如果设置为false则不会自动播放
+	    pause: false,   // 鼠标移上后是否暂停, 默认暂停
+	    wrap: true,    // 是否循环轮播, 默认循环
+	  })
+    </script>
+  <!-- 以下是Live2D看板娘的实现，通俗的讲，就是网页底端的一个动态小人儿 -->
+   <script src="https://l2dwidget.js.org/lib/L2Dwidget.min.js"></script>
+   <!--<script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>-->
+   
+   <script>
+       L2Dwidget.init({
+           "model": {
+               "jsonPath": "https://unpkg.com/live2d-widget-model-shizuku@1.0.5/assets/shizuku.model.json",
+   　　        "scale": 1
+           },
+           "display": {
+               "position": "right",
+               "width": 150,
+               "height": 300,
+   　　        "hOffset": 0,
+               "vOffset": -20
+           },
+           "mobile": {
+               "show": true,
+               "scale": 0.5
+           },
+           "react": {
+               "opacityDefault": 0.8,
+               "opacityOnHover": 1
+           },
+           "dialog": {
+               "enable": true,
+               "script": {
+                   'tap body': '哎呀！别碰我！',
+                   'tap face': '欢迎来到ws的个人网站，请认真浏览，不要随意乱摸人家哦！',
+               }
+           },
+		   // 只有部分的看板娘可以触发 触摸身体和触摸头部的事件
+       });
+	   //L2Dwidget.alertTe
+   </script>
+</body>
+
+</html>

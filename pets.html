@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+
+
+		<title>宠物介绍</title>
+		<meta charset="utf-8">
+		<!-- Font Awesome -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+		<!-- <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"> -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.10.0/css/lightbox.min.css" />
+		<style>
+			
+			html,
+			body {
+				height: 100%;
+			}
+			
+			body {
+				margin: 0;
+				background: #000;
+			}
+			
+			canvas {
+				display: block;
+			}
+			
+			.waves {
+				position: absolute;
+				left: 0;
+				top: 0;
+				right: 0;
+				bottom: 0;
+			}
+			.filters {
+				margin-top: 50px;
+			}
+
+			.filters ul {
+				padding: 0;
+			}
+
+			.filters ul li {
+				list-style: none;
+				display: block;
+				padding: 15px 0px;
+				cursor: pointer;
+				position: relative;
+				font-size: 17px;
+				font-weight: 500;
+				color: #fff;
+				text-transform: capitalize;
+				transition: all 0.3s ease-in-out;
+			}
+
+			.filters ul li.active,
+			.filters ul li:hover {
+				color: #5fb759;
+			}
+
+			.filters-content {
+				margin-top: 50px;
+			}
+
+			.filters-content .show {
+				opacity: 1;
+				visibility: visible;
+				transition: all 350ms;
+			}
+
+			.filters-content .hide {
+				opacity: 0;
+				visibility: hidden;
+				transition: all 350ms;
+			}
+
+			.filters-content .all {
+				margin-bottom: 30px;
+			}
+
+			.filters-content .item {
+				text-align: center;
+				cursor: pointer;
+				transition: all 0.3s ease-in-out;
+			}
+
+			.filters-content .item:hover {
+				opacity: 0.75;
+			}
+
+			.filters-content .item .p-inner {
+				padding: 20px 30px;
+				box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+			}
+
+			.filters-content .item .p-inner h5 {
+				font-size: 15px;
+			}
+
+			.filters-content .item .p-inner .cat {
+				font-size: 13px;
+			}
+
+			.filters-content .item img {
+				width: 100%;
+				border: 4px solid white;
+			}
+
+			#projects {
+				padding-top: 120px;
+			}
+
+			#projects .section-heading {
+				margin-bottom: 60px;
+			}
+
+			#projects .section-heading h6 {
+				color: #5fb759;
+			}
+
+			@media (max-width: 992px) {
+				#projects .filters ul li {
+					display: inline-block;
+					margin-right: 10px;
+					padding: 0px;
+				}
+
+				#projects .section-heading {
+					margin-bottom: 0px;
+				}
+			}
+
+			#lightbox {
+				margin-top: 140px;
+			}
+			
+			
+			*{
+			    margin: 0; 
+			    padding: 0; 
+			    box-sizing: border-box; 
+			}
+			.container1, .container1 .one, .two{ 
+			    width: 250px;
+			    height: 300px;
+			}
+			.container1{ 
+			    position: relative; 
+			    transition: 1s; 
+			    transform-style: preserve-3d; 
+			}
+			.one{ 
+			    position: absolute; 
+			    top: 0; 
+			    background: #EEEEEE; 
+			    transform: rotateY(180deg);
+			    backface-visibility: hidden;
+			 }
+			.two{ 
+			    position: absolute; 
+			    top: 0; 
+			    backface-visibility: hidden;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<div class="waves"></div>
+		<section class="section" id="projects">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-3">
+						<div class="section-heading">
+							<h2 style="color: cyan;">The Pets</h2>
+						</div>
+						<div class="filters">
+							<ul>
+								<li class="active" data-filter="*">All</li>
+								<li data-filter=".des">Dogs</li>
+								<li data-filter=".dev">Cats</li>
+								<li data-filter=".gra">Birds</li>
+								<li data-filter=".tsh">Others</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-9">
+						<div class="filters-content">
+							<div class="row grid">
+								<div class="col-md-4 all des">
+									<div class="container1" id="my1" title="点击卡片查看详情">
+										<div class="one" style="position: relative;">
+											<div style="float: right;" >
+												<i class="fas fa-paper-plane" style="color: blue;"></i>
+											</div><br />
+											<h6 style="font-style: italic;">简介：</h3>
+											<div style="color: blueviolet;">&emsp;&emsp;拉布拉多犬属于中大型犬，其肌肉量充足、骨量较重。拉布拉多犬性格温顺、活泼好动、
+											喜欢与人类亲近、对人类友善、忠心护主，因此常被作为辅助人类工作或生活的犬种，如缉毒犬、导盲犬、搜救犬等。纯种拉布拉多犬头顶较平，
+											两耳较大呈三角形并且自然垂至头部两侧，尾部似水獭尾。</div>
+											<div style="position:absolute; top:270px; left: 88px;">
+												<i class="fas fa-star" style="color: rgb(255, 153, 0);"></i>
+												<i class="fas fa-star" style="color: rgb(255, 153, 0);"></i>
+												<i class="fas fa-star" style="color: rgb(255, 153, 0);"></i>
+											</div>
+										</div>
+										<div class="item two">
+											<!-- <a href="images/project-big-item-01.jpg" data-lightbox="image-1"
+												data-title="Our Projects"> -->
+												<img src="images/lbld.jpeg" alt="" style="width: 250px; height: 300px;"></a>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-4 all dev">
+									<div class="container1" id="my2" title="点击卡片查看详情">
+										<div class="one" style="position: relative;">
+											<div style="float: right;" >
+												<i class="fas fa-paper-plane" style="color: blue;"></i>
+											</div><br />
+											<h6 style="font-style: italic;">简介：</h3>
+											<div style="color: #E0A800;">&emsp;&emsp;美国短毛猫，俗称美短，它的毛色有30多种，比英国短毛猫的种类更多。
+											根据毛色分为美短银虎斑，美短棕虎斑，
+											美短银虎斑佳白这些，虎斑，鱼骨刺指的是美短这个品种的花型。银，棕是美短的这个品种的颜色。</div>
+											<div style="position:absolute; top:270px; left: 90px;">
+												<i class="fas fa-star" style="color: rgb(255, 153, 0);"></i>
+												<i class="fas fa-star" style="color: rgb(255, 153, 0);"></i>
+												<i class="fas fa-star-half" style="color: rgb(255, 153, 0);"></i>
+											</div>
+										</div>
+										<div class="item two">
+											<!-- <a href="images/project-big-item-02.jpg" data-lightbox="image-1"
+												data-title="Our Projects"> -->
+												<img src="images/mgdmm.jpeg" alt="" style="width: 250px; height: 300px;"></a>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-4 all gra">
+									<div class="container1" id="my3" title="点击卡片查看详情">
+										<div class="one" style="position: relative;">
+											<div style="float: right;" >
+												<i class="fas fa-paper-plane" style="color: blue;"></i>
+											</div><br />
+											<h6 style="font-style: italic;">简介：</h3>
+											<div style="color: skyblue;">&emsp;&emsp;鹦鹉是鹦形目众多羽毛艳丽、爱叫的鸟。典型的攀禽，对趾型足，鸟喙强劲有力，可以食用硬壳果。羽色鲜艳，它们以其美丽的羽毛，善学人语技能的特点，更为人们所欣赏和钟爱。
+											鹦鹉中体形最大的当属紫蓝金刚鹦鹉，体长可达100厘米，最小的是蓝冠短尾鹦鹉 ，体长仅有12厘米。</div>
+											<div style="position:absolute; top:270px; left: 80px;">
+												<i class="fas fa-star" style="color: rgb(255, 153, 0);"></i>
+												<i class="fas fa-star" style="color: rgb(255, 153, 0);"></i>
+												<i class="fas fa-star" style="color: rgb(255, 153, 0);"></i>
+												<i class="fas fa-star-half" style="color: rgb(255, 153, 0);"></i>
+											</div>
+										</div>
+										<div class="item two">
+											<!-- <a href="images/project-big-item-03.jpg" data-lightbox="image-1"
+												data-title="Our Projects"> -->
+												<img src="images/yw.jpeg" alt="" style="width: 250px; height: 300px;"></a>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-4 all tsh">
+									<div class="container1" id="my4" title="点击卡片查看详情">
+										<div class="one" style="position: relative;">
+											<div style="float: right;" >
+												<i class="fas fa-paper-plane" style="color: blue;"></i>
+											</div><br />
+											<h6 style="font-style: italic;">简介：</h3>
+											<div style="color: cyan;">&emsp;&emsp;仓鼠最常见的毛色以由脸颊到腹部为白色，背部为褐色的居多，但也有由深浅褐色形成的斑点，毛色多为灰色，而后培育出了 金色、花斑色等，甚至是长毛的多样化品种。<br />
+											&emsp;&emsp;仓鼠是夜行性动物，日间是睡觉，晚上才活动。</div>
+											<div style="position:absolute; top:270px; left: 79px;">
+												<i class="fas fa-star" style="color: rgb(255, 153, 0);"></i>
+												<i class="fas fa-star" style="color: rgb(255, 153, 0);"></i>
+												<i class="fas fa-star" style="color: rgb(255, 153, 0);"></i>
+												<i class="fas fa-star" style="color: rgb(255, 153, 0);"></i>
+											</div>
+										</div>
+										<div class="item two">
+											<!-- <a href="images/project-big-item-04.jpg" data-lightbox="image-1"
+												data-title="Our Projects"> -->
+												<img src="images/cs.jpg" alt="" style="width: 250px; height: 300px;"></a>
+										</div>
+									</div>
+									
+								</div>
+								<div class="col-md-4 all dev">
+									<div class="container1" id="my5" title="点击卡片查看详情">
+										<div class="one" style="position: relative;">
+											<div style="float: right;" >
+												<i class="fas fa-paper-plane" style="color: blue;"></i>
+											</div><br />
+											<h6 style="font-style: italic;">简介：</h3>
+											<div style="color: green;">&emsp;&emsp;布偶猫身上的毛发虽然属于中长型，但是这些毛发质地柔滑，并不会缠连在一起，
+											而且它的尾巴蓬松，颈部也时常带着“围脖”，这些特点让它看起来十分优雅。布偶猫是最漂亮的一种猫咪，根据毛色分为海豹色，蓝色，巧克力色，丁香色，红色，奶油色。
+											</div>
+											<div style="position:absolute; top:270px; left: 102px;">
+												<i class="fas fa-star" style="color: rgb(255, 153, 0);"></i>
+												<i class="fas fa-star" style="color: rgb(255, 153, 0);"></i>
+											</div>
+										</div>
+										<div class="item two">
+											<!-- <a href="images/project-big-item-05.jpg" data-lightbox="image-1"
+												data-title="Our Projects"> -->
+												<img src="images/bom.jpg" alt="" style="width: 250px; height: 300px;"></a>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-4 all des">
+									<div class="container1" id="my6" title="点击卡片查看详情">
+										<div class="one" style="position: relative;">
+											<div style="float: right;" >
+												<i class="fas fa-paper-plane" style="color: blue;"></i>
+											</div><br />
+											<h6 style="font-style: italic;">简介：</h3>
+											<div style="color: blue;">&emsp;&emsp;德国牧羊犬，它是我们最常见的警犬之一，一身黑背穿梭在每一个需要的场景。它行动敏捷，适应各种环境。它是全球所有犬种中最受关注的一种，因为只有它有世界上有统一的标准和单独犬种的俱乐部。
+											一只好的德牧的价格也绝对不是其它犬种的赛级犬可以比拟的。</div>
+											<div style="position:absolute; top:270px; left: 65px;" >
+												<i class="fas fa-star" style="color: rgb(255, 153, 0);"></i>
+												<i class="fas fa-star" style="color: rgb(255, 153, 0);"></i>
+												<i class="fas fa-star" style="color: rgb(255, 153, 0);"></i>
+												<i class="fas fa-star" style="color: rgb(255, 153, 0);"></i>
+												<i class="fas fa-star" style="color: rgb(255, 153, 0);"></i>
+											</div>
+										</div>
+										<div class="item two">
+											<!-- <a href="images/project-big-item-06.jpg" data-lightbox="image-1"
+												data-title="Our Projects"> -->
+												<img src="images/myq.jpeg" alt="" style="width: 250px; height: 300px;"></a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+
+
+
+		<!-- jQuery -->
+		<script src="assets/js/jquery-2.1.0.min.js"></script>
+
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.10.0/js/lightbox.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
+
+
+		<script>
+			(function($) {
+
+				"use strict";
+
+
+
+				$('.filters ul li').click(function() {
+					$('.filters ul li').removeClass('active');
+					$(this).addClass('active');
+
+					var data = $(this).attr('data-filter');
+					$grid.isotope({
+						filter: data
+					})
+				});
+
+				var $grid = $(".grid").isotope({
+					itemSelector: ".all",
+					percentPosition: true,
+					masonry: {
+						columnWidth: ".all"
+					}
+				})
+
+
+
+			})(window.jQuery);
+			class ShaderProgram {
+			
+						constructor(holder, options = {}) {
+			
+							options = Object.assign({
+								antialias: false,
+								depthTest: false,
+								mousemove: false,
+								autosize: true,
+								side: 'front',
+								vertex: `
+			    precision highp float;
+			
+			    attribute vec4 a_position;
+			    attribute vec4 a_color;
+			
+			    uniform float u_time;
+			    uniform vec2 u_resolution;
+			    uniform vec2 u_mousemove;
+			    uniform mat4 u_projection;
+			
+			    varying vec4 v_color;
+			
+			    void main() {
+			
+			      gl_Position = u_projection * a_position;
+			      gl_PointSize = (10.0 / gl_Position.w) * 100.0;
+			
+			      v_color = a_color;
+			
+			    }`,
+								fragment: `
+			    precision highp float;
+			
+			    uniform sampler2D u_texture;
+			    uniform int u_hasTexture;
+			
+			    varying vec4 v_color;
+			
+			    void main() {
+			
+			      if ( u_hasTexture == 1 ) {
+			
+			        gl_FragColor = v_color * texture2D(u_texture, gl_PointCoord);
+			
+			      } else {
+			
+			        gl_FragColor = v_color;
+			
+			      }
+			
+			    }`,
+								uniforms: {},
+								buffers: {},
+								camera: {},
+								texture: null,
+								onUpdate: (() => {}),
+								onResize: (() => {}),
+							}, options)
+			
+							const uniforms = Object.assign({
+								time: {
+									type: 'float',
+									value: 0
+								},
+								hasTexture: {
+									type: 'int',
+									value: 0
+								},
+								resolution: {
+									type: 'vec2',
+									value: [0, 0]
+								},
+								mousemove: {
+									type: 'vec2',
+									value: [0, 0]
+								},
+								projection: {
+									type: 'mat4',
+									value: [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1]
+								},
+							}, options.uniforms)
+			
+							const buffers = Object.assign({
+								position: {
+									size: 3,
+									data: []
+								},
+								color: {
+									size: 4,
+									data: []
+								},
+							}, options.buffers)
+			
+							const camera = Object.assign({
+								fov: 60,
+								near: 1,
+								far: 10000,
+								aspect: 1,
+								z: 100,
+								perspective: true,
+							}, options.camera)
+			
+							const canvas = document.createElement('canvas')
+							const gl = canvas.getContext('webgl', {
+								antialias: options.antialias
+							})
+			
+							if (!gl) return false
+			
+							this.count = 0
+							this.gl = gl
+							this.canvas = canvas
+							this.camera = camera
+							this.holder = holder
+							this.onUpdate = options.onUpdate
+							this.onResize = options.onResize
+							this.data = {}
+			
+							holder.appendChild(canvas)
+			
+							this.createProgram(options.vertex, options.fragment)
+			
+							this.createBuffers(buffers)
+							this.createUniforms(uniforms)
+			
+							this.updateBuffers()
+							this.updateUniforms()
+			
+							this.createTexture(options.texture)
+			
+							gl.enable(gl.BLEND)
+							gl.enable(gl.CULL_FACE)
+							gl.blendFunc(gl.SRC_ALPHA, gl.ONE)
+							gl[options.depthTest ? 'enable' : 'disable'](gl.DEPTH_TEST)
+			
+							if (options.autosize)
+								window.addEventListener('resize', e => this.resize(e), false)
+							if (options.mousemove)
+								window.addEventListener('mousemove', e => this.mousemove(e), false)
+			
+							this.resize()
+			
+							this.update = this.update.bind(this)
+							this.time = {
+								start: performance.now(),
+								old: performance.now()
+							}
+							this.update()
+			
+						}
+			
+						mousemove(e) {
+			
+							let x = e.pageX / this.width * 2 - 1
+							let y = e.pageY / this.height * 2 - 1
+			
+							this.uniforms.mousemove = [x, y]
+			
+						}
+			
+						resize(e) {
+			
+							const holder = this.holder
+							const canvas = this.canvas
+							const gl = this.gl
+			
+							const width = this.width = holder.offsetWidth
+							const height = this.height = holder.offsetHeight
+							const aspect = this.aspect = width / height
+							const dpi = this.dpi = devicePixelRatio
+			
+							canvas.width = width * dpi
+							canvas.height = height * dpi
+							canvas.style.width = width + 'px'
+							canvas.style.height = height + 'px'
+			
+							gl.viewport(0, 0, width * dpi, height * dpi)
+							gl.clearColor(0, 0, 0, 0)
+			
+							this.uniforms.resolution = [width, height]
+							this.uniforms.projection = this.setProjection(aspect)
+			
+							this.onResize(width, height, dpi)
+			
+						}
+			
+						setProjection(aspect) {
+			
+							const camera = this.camera
+			
+							if (camera.perspective) {
+			
+								camera.aspect = aspect
+			
+								const fovRad = camera.fov * (Math.PI / 180)
+								const f = Math.tan(Math.PI * 0.5 - 0.5 * fovRad)
+								const rangeInv = 1.0 / (camera.near - camera.far)
+			
+								const matrix = [
+									f / camera.aspect, 0, 0, 0,
+									0, f, 0, 0,
+									0, 0, (camera.near + camera.far) * rangeInv, -1,
+									0, 0, camera.near * camera.far * rangeInv * 2, 0
+								]
+			
+								matrix[14] += camera.z
+								matrix[15] += camera.z
+			
+								return matrix
+			
+							} else {
+			
+								return [
+									2 / this.width, 0, 0, 0,
+									0, -2 / this.height, 0, 0,
+									0, 0, 1, 0,
+									-1, 1, 0, 1,
+								]
+			
+							}
+			
+						}
+			
+						createShader(type, source) {
+			
+							const gl = this.gl
+							const shader = gl.createShader(type)
+			
+							gl.shaderSource(shader, source)
+							gl.compileShader(shader)
+			
+							if (gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+			
+								return shader
+			
+							} else {
+			
+								console.log(gl.getShaderInfoLog(shader))
+								gl.deleteShader(shader)
+			
+							}
+			
+						}
+			
+						createProgram(vertex, fragment) {
+			
+							const gl = this.gl
+			
+							const vertexShader = this.createShader(gl.VERTEX_SHADER, vertex)
+							const fragmentShader = this.createShader(gl.FRAGMENT_SHADER, fragment)
+			
+							const program = gl.createProgram()
+			
+							gl.attachShader(program, vertexShader)
+							gl.attachShader(program, fragmentShader)
+							gl.linkProgram(program)
+			
+							if (gl.getProgramParameter(program, gl.LINK_STATUS)) {
+			
+								gl.useProgram(program)
+								this.program = program
+			
+							} else {
+			
+								console.log(gl.getProgramInfoLog(program))
+								gl.deleteProgram(program)
+			
+							}
+			
+						}
+			
+						createUniforms(data) {
+			
+							const gl = this.gl
+							const uniforms = this.data.uniforms = data
+							const values = this.uniforms = {}
+			
+							Object.keys(uniforms).forEach(name => {
+			
+								const uniform = uniforms[name]
+			
+								uniform.location = gl.getUniformLocation(this.program, 'u_' + name)
+			
+								Object.defineProperty(values, name, {
+									set: value => {
+			
+										uniforms[name].value = value
+										this.setUniform(name, value)
+			
+									},
+									get: () => uniforms[name].value
+								})
+			
+							})
+			
+						}
+			
+						setUniform(name, value) {
+			
+							const gl = this.gl
+							const uniform = this.data.uniforms[name]
+			
+							uniform.value = value
+			
+							switch (uniform.type) {
+								case 'int': {
+									gl.uniform1i(uniform.location, value)
+									break
+								}
+								case 'float': {
+									gl.uniform1f(uniform.location, value)
+									break
+								}
+								case 'vec2': {
+									gl.uniform2f(uniform.location, ...value)
+									break
+								}
+								case 'vec3': {
+									gl.uniform3f(uniform.location, ...value)
+									break
+								}
+								case 'vec4': {
+									gl.uniform4f(uniform.location, ...value)
+									break
+								}
+								case 'mat2': {
+									gl.uniformMatrix2fv(uniform.location, false, value)
+									break
+								}
+								case 'mat3': {
+									gl.uniformMatrix3fv(uniform.location, false, value)
+									break
+								}
+								case 'mat4': {
+									gl.uniformMatrix4fv(uniform.location, false, value)
+									break
+								}
+							}
+			
+							// ivec2       : uniform2i,
+							// ivec3       : uniform3i,
+							// ivec4       : uniform4i,
+							// sampler2D   : uniform1i,
+							// samplerCube : uniform1i,
+							// bool        : uniform1i,
+							// bvec2       : uniform2i,
+							// bvec3       : uniform3i,
+							// bvec4       : uniform4i,
+			
+						}
+			
+						updateUniforms() {
+			
+							const gl = this.gl
+							const uniforms = this.data.uniforms
+			
+							Object.keys(uniforms).forEach(name => {
+			
+								const uniform = uniforms[name]
+			
+								this.uniforms[name] = uniform.value
+			
+							})
+			
+						}
+			
+						createBuffers(data) {
+			
+							const gl = this.gl
+							const buffers = this.data.buffers = data
+							const values = this.buffers = {}
+			
+							Object.keys(buffers).forEach(name => {
+			
+								const buffer = buffers[name]
+			
+								buffer.buffer = this.createBuffer('a_' + name, buffer.size)
+			
+								Object.defineProperty(values, name, {
+									set: data => {
+			
+										buffers[name].data = data
+										this.setBuffer(name, data)
+			
+										if (name == 'position')
+											this.count = buffers.position.data.length / 3
+			
+									},
+									get: () => buffers[name].data
+								})
+			
+							})
+			
+						}
+			
+						createBuffer(name, size) {
+			
+							const gl = this.gl
+							const program = this.program
+			
+							const index = gl.getAttribLocation(program, name)
+							const buffer = gl.createBuffer()
+			
+							gl.bindBuffer(gl.ARRAY_BUFFER, buffer)
+							gl.enableVertexAttribArray(index)
+							gl.vertexAttribPointer(index, size, gl.FLOAT, false, 0, 0)
+			
+							return buffer
+			
+						}
+			
+						setBuffer(name, data) {
+			
+							const gl = this.gl
+							const buffers = this.data.buffers
+			
+							if (name == null && !gl.bindBuffer(gl.ARRAY_BUFFER, null)) return
+			
+							gl.bindBuffer(gl.ARRAY_BUFFER, buffers[name].buffer)
+							gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(data), gl.STATIC_DRAW)
+			
+						}
+			
+						updateBuffers() {
+			
+							const gl = this.gl
+							const buffers = this.buffers
+			
+							Object.keys(buffers).forEach(name =>
+								buffers[name] = buffer.data
+							)
+			
+							this.setBuffer(null)
+			
+						}
+			
+						createTexture(src) {
+			
+							const gl = this.gl
+							const texture = gl.createTexture()
+			
+							gl.bindTexture(gl.TEXTURE_2D, texture)
+							gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, 1, 1, 0, gl.RGBA, gl.UNSIGNED_BYTE, new Uint8Array([0, 0, 0,
+								0]))
+			
+							this.texture = texture
+			
+							if (src) {
+			
+								this.uniforms.hasTexture = 1
+								this.loadTexture(src)
+			
+							}
+			
+						}
+			
+						loadTexture(src) {
+			
+							const gl = this.gl
+							const texture = this.texture
+			
+							const textureImage = new Image()
+			
+							textureImage.onload = () => {
+			
+								gl.bindTexture(gl.TEXTURE_2D, texture)
+			
+								gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, textureImage)
+			
+								gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR)
+								gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR)
+			
+								gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE)
+								gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE)
+			
+								// gl.generateMipmap( gl.TEXTURE_2D )
+			
+							}
+			
+							textureImage.src = src
+			
+						}
+			
+						update() {
+			
+							const gl = this.gl
+			
+							const now = performance.now()
+							const elapsed = (now - this.time.start) / 5000
+							const delta = now - this.time.old
+							this.time.old = now
+			
+							this.uniforms.time = elapsed
+			
+							if (this.count > 0) {
+								gl.clear(gl.COLORBUFFERBIT)
+								gl.drawArrays(gl.POINTS, 0, this.count)
+							}
+			
+							this.onUpdate(delta)
+			
+							requestAnimationFrame(this.update)
+			
+						}
+			
+					}
+			
+					const pointSize = 2.5
+			
+					const waves = new ShaderProgram(document.querySelector('.waves'), {
+						texture: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAb1BMVEUAAAD///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8v0wLRAAAAJHRSTlMAC/goGvDhmwcExrVjWzrm29TRqqSKenRXVklANSIUE8mRkGpv+HOfAAABCElEQVQ4y4VT13LDMAwLrUHteO+R9f/fWMfO6dLaPeKVEECRxOULWsEGpS9nULDwia2Y+ALqUNbAWeg775zv+sA4/FFRMxt8U2FZFCVWjR/YrH4/H9sarclSKdPMWKzb8VsEeHB3m0shkhVCyNzeXeAQ9Xl4opEieX2QCGnwGbj6GMyjw9t1K0fK9YZunPXeAGsfJtYjwzxaBnozGGorYz0ypK2HzQSYx1y8DgSRo2ewOiyh2QWOEk1Y9OrQV0a8TiBM1a8eMHWYnRMy7CZ4t1CmyRkhSUvP3gRXyHOCLBxNoC3IJv//ZrJ/kxxUHPUB+6jJZZHrpg6GOjnqaOmzp4NDR48OLxn/H27SRQ08S0ZJAAAAAElFTkSuQmCC',
+						uniforms: {
+							size: {
+								type: 'float',
+								value: pointSize
+							},
+							field: {
+								type: 'vec3',
+								value: [0, 0, 0]
+							},
+							speed: {
+								type: 'float',
+								value: 5
+							},
+						},
+						vertex: `
+			#define M_PI 3.1415926535897932384626433832795
+			
+			precision highp float;
+			
+			attribute vec4 a_position;
+			attribute vec4 a_color;
+			
+			uniform float u_time;
+			uniform float u_size;
+			uniform float u_speed;
+			uniform vec3 u_field;
+			uniform mat4 u_projection;
+			
+			varying vec4 v_color;
+			
+			void main() {
+			
+			  vec3 pos = a_position.xyz;
+			
+			  pos.y += (
+			    cos(pos.x / u_field.x * M_PI * 8.0 + u_time * u_speed) +
+			    sin(pos.z / u_field.z * M_PI * 8.0 + u_time * u_speed)
+			  ) * u_field.y;
+			
+			  gl_Position = u_projection * vec4( pos.xyz, a_position.w );
+			  gl_PointSize = ( u_size / gl_Position.w ) * 100.0;
+			
+			  v_color = a_color;
+			
+			}`,
+						fragment: `
+			precision highp float;
+			
+			uniform sampler2D u_texture;
+			
+			varying vec4 v_color;
+			
+			void main() {
+			
+			  gl_FragColor = v_color * texture2D(u_texture, gl_PointCoord);
+			
+			}`,
+						onResize(w, h, dpi) {
+			
+							const position = [],
+								color = []
+			
+							const width = 400 * (w / h)
+							const depth = 400
+							const height = 3
+							const distance = 5
+			
+							for (let x = 0; x < width; x += distance) {
+								for (let z = 0; z < depth; z += distance) {
+			
+									position.push(-width / 2 + x, -30, -depth / 2 + z)
+									color.push(0, 5 - (x / width) * 1, 0.3 + x / width * 0.5, z / depth)
+			
+								}
+							}
+			
+							this.uniforms.field = [width, height, depth]
+			
+							this.buffers.position = position
+							this.buffers.color = color
+			
+							this.uniforms.size = (h / 400) * pointSize * dpi
+			
+						},
+					})
+		</script>
+
+	</body>
+	<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		$(() => {
+		    $("#my1").click(() => {
+		        if($("#my1").attr("style") == undefined){
+		            $("#my1").css("transform","rotateY(180deg)");
+		        }else{
+		            $("#my1").removeAttr("style");
+		        }
+		        
+		    });
+		})
+		$(() => {
+		    $("#my2").click(() => {
+		        if($("#my2").attr("style") == undefined){
+		            $("#my2").css("transform","rotateY(180deg)");
+		        }else{
+		            $("#my2").removeAttr("style");
+		        }
+		        
+		    });
+		})
+		$(() => {
+		    $("#my3").click(() => {
+		        if($("#my3").attr("style") == undefined){
+		            $("#my3").css("transform","rotateY(180deg)");
+		        }else{
+		            $("#my3").removeAttr("style");
+		        }
+		        
+		    });
+		})
+		$(() => {
+		    $("#my4").click(() => {
+		        if($("#my4").attr("style") == undefined){
+		            $("#my4").css("transform","rotateY(180deg)");
+		        }else{
+		            $("#my4").removeAttr("style");
+		        }
+		        
+		    });
+		})
+		$(() => {
+		    $("#my5").click(() => {
+		        if($("#my5").attr("style") == undefined){
+		            $("#my5").css("transform","rotateY(180deg)");
+		        }else{
+		            $("#my5").removeAttr("style");
+		        }
+		        
+		    });
+		})
+		$(() => {
+		    $("#my6").click(() => {
+		        if($("#my6").attr("style") == undefined){
+		            $("#my6").css("transform","rotateY(180deg)");
+		        }else{
+		            $("#my6").removeAttr("style");
+		        }
+		        
+		    });
+		})
+	</script>
+</html>
